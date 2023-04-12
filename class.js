@@ -19,16 +19,19 @@ var Department = /** @class */ (function () {
         this.name = name;
         this.employees = [];
     }
-    Department.prototype.describe = function () {
-        console.log("Department: (".concat(this.id, ") ").concat(this.name));
+    Department.createEmployee = function (name) {
+        return { name: name };
     };
-    Department.prototype.addEmployee = function (name) {
-        this.employees.push(name);
+    Department.prototype.addEmployee = function (employee) {
+        // validation etc
+        // this.id = 'd2';
+        this.employees.push(employee);
     };
     Department.prototype.printEmployeeInformation = function () {
         console.log(this.employees.length);
         console.log(this.employees);
     };
+    Department.fiscalYear = 2020;
     return Department;
 }());
 var ITDepartment = /** @class */ (function (_super) {
@@ -39,6 +42,9 @@ var ITDepartment = /** @class */ (function (_super) {
         _this.admins = admins;
         return _this;
     }
+    ITDepartment.prototype.describe = function () {
+        console.log("IT Department - ID ".concat(this.id));
+    };
     return ITDepartment;
 }(Department));
 var AccountingDepartment = /** @class */ (function (_super) {
@@ -66,6 +72,9 @@ var AccountingDepartment = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    AccountingDepartment.prototype.describe = function () {
+        console.log("Accounting Department - ID: " + this.id);
+    };
     AccountingDepartment.prototype.addEmployee = function (name) {
         if (name === "Dongs") {
             return;
@@ -81,6 +90,7 @@ var AccountingDepartment = /** @class */ (function (_super) {
     };
     return AccountingDepartment;
 }(Department));
+console.log(Department.fiscalYear);
 var it = new ITDepartment("d1", ["Dongs"]);
 it.describe();
 it.addEmployee("DongHyun");
