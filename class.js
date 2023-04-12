@@ -22,8 +22,8 @@ var Department = /** @class */ (function () {
     Department.prototype.describe = function () {
         console.log("Department: (".concat(this.id, ") ").concat(this.name));
     };
-    Department.prototype.addEmployee = function (employee) {
-        this.employees.push(employee);
+    Department.prototype.addEmployee = function (name) {
+        this.employees.push(name);
     };
     Department.prototype.printEmployeeInformation = function () {
         console.log(this.employees.length);
@@ -46,11 +46,35 @@ var AccountingDepartment = /** @class */ (function (_super) {
     function AccountingDepartment(id, reports) {
         var _this = _super.call(this, id, "Accounting") || this;
         _this.reports = reports;
-        _this.reports = reports;
+        _this.lastReport = reports[0];
         return _this;
     }
+    Object.defineProperty(AccountingDepartment.prototype, "mostRecentReport", {
+        get: function () {
+            if (this.lastReport) {
+                return this.lastReport;
+            }
+            throw new Error("No Report");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(AccountingDepartment.prototype, "mostRecendReport", {
+        set: function (value) {
+            this.lastReport = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    AccountingDepartment.prototype.addEmployee = function (name) {
+        if (name === "Dongs") {
+            return;
+        }
+        this.employees.push(name);
+    };
     AccountingDepartment.prototype.addReport = function (text) {
         this.reports.push(text);
+        this.lastReport = text;
     };
     AccountingDepartment.prototype.printReports = function () {
         console.log(this.reports);
@@ -64,4 +88,8 @@ it.addEmployee("SuZy");
 it.printEmployeeInformation();
 var accounting = new AccountingDepartment("d2", []);
 accounting.addReport("Someting went wrong!");
+console.log(accounting.mostRecentReport);
 accounting.printReports();
+accounting.addEmployee("D5ng");
+accounting.addEmployee("ina");
+accounting.printEmployeeInformation();
