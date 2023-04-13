@@ -1,5 +1,8 @@
-interface Greetable {
-  name: string;
+interface Named {
+  readonly name: string;
+}
+
+interface Greetable extends Named {
   greet(pharse: string): void;
 }
 
@@ -12,7 +15,6 @@ class Person implements Greetable {
 }
 
 const person = new Person("DongHyun");
-console.log(person);
 person.greet("Hello My name is");
 
 let user1: Greetable;

@@ -9,7 +9,6 @@ var Person = /** @class */ (function () {
     return Person;
 }());
 var person = new Person("DongHyun");
-console.log(person);
 person.greet("Hello My name is");
 var user1;
 user1 = new Person("Dongs");
