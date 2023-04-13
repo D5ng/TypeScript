@@ -1,27 +1,20 @@
-{
-    var addNumber = function (x, y) { return x + y; };
-    console.log(addNumber(5, 5));
-}
+// interface AddFn {
+//   (a: number, b: number): number;
+// }
+var user = {
+    name: "Dongs",
+    say: function () {
+        console.log("my name is ".concat(this.name));
+    },
+};
 var Person = /** @class */ (function () {
-    function Person(name) {
+    function Person(name, age) {
         this.name = name;
-        this.age = 28;
-        if (name) {
-            this.name = name;
-        }
+        this.age = age;
     }
-    Person.prototype.greet = function (pharse) {
-        if (this.name) {
-            console.log("".concat(pharse, " ").concat(this.name));
-        }
-        else {
-            console.log("Hi");
-        }
+    Person.prototype.say = function () {
+        console.log("my name is ".concat(this.name));
     };
     return Person;
 }());
-var person = new Person();
-person.greet("Hello My name is");
-var user1;
-user1 = new Person("Dongs");
-user1.greet("Hi There I am");
+new Person("DongHyun");
