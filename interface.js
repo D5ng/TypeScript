@@ -6,13 +6,21 @@ var Person = /** @class */ (function () {
     function Person(name) {
         this.name = name;
         this.age = 28;
+        if (name) {
+            this.name = name;
+        }
     }
     Person.prototype.greet = function (pharse) {
-        console.log("".concat(pharse, " ").concat(this.name));
+        if (this.name) {
+            console.log("".concat(pharse, " ").concat(this.name));
+        }
+        else {
+            console.log("Hi");
+        }
     };
     return Person;
 }());
-var person = new Person("DongHyun");
+var person = new Person();
 person.greet("Hello My name is");
 var user1;
 user1 = new Person("Dongs");

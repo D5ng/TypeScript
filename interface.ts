@@ -8,7 +8,7 @@ interface AddFn {
 }
 
 interface Named {
-  readonly name: string;
+  readonly name?: string;
 }
 
 interface Greetable extends Named {
@@ -17,13 +17,21 @@ interface Greetable extends Named {
 
 class Person implements Greetable, Named {
   age = 28;
-  constructor(public name: string) {}
+  constructor(public name?: string) {
+    if (name) {
+      this.name = name;
+    }
+  }
   greet(pharse: string) {
-    console.log(`${pharse} ${this.name}`);
+    if (this.name) {
+      console.log(`${pharse} ${this.name}`);
+    } else {
+      console.log("Hi");
+    }
   }
 }
 
-const person = new Person("DongHyun");
+const person = new Person();
 person.greet("Hello My name is");
 
 let user1: Greetable;
