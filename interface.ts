@@ -1,3 +1,12 @@
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+{
+  let addNumber: AddFn = (x: number, y: number) => x + y;
+  console.log(addNumber(5, 5));
+}
+
 interface Named {
   readonly name: string;
 }
@@ -6,7 +15,7 @@ interface Greetable extends Named {
   greet(pharse: string): void;
 }
 
-class Person implements Greetable {
+class Person implements Greetable, Named {
   age = 28;
   constructor(public name: string) {}
   greet(pharse: string) {

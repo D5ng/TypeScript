@@ -1,3 +1,7 @@
+{
+    var addNumber = function (x, y) { return x + y; };
+    console.log(addNumber(5, 5));
+}
 var Person = /** @class */ (function () {
     function Person(name) {
         this.name = name;
