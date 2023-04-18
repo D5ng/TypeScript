@@ -9,9 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-function merge(objA, objB) {
+function mergeObject(objA, objB) {
     return __assign(__assign({}, objA), objB);
 }
-var mergedObject = merge({ name: "dongs" }, { age: 28 });
-var mergedObject2 = merge({ name: "DongHyun", hobbies: ["Foot Ball", "Soccer"] }, { age: 28 });
-console.log(mergedObject, mergedObject2);
+var mergedObject = mergeObject({ name: "dongs" }, { age: 28 });

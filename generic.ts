@@ -1,13 +1,8 @@
-function merge<T, U>(objA: T, objB: U) {
+function mergeObject<T extends object, U extends object>(objA: T, objB: U) {
   return {
     ...objA,
     ...objB,
   };
 }
 
-const mergedObject = merge({ name: "dongs" }, { age: 28 });
-const mergedObject2 = merge(
-  { name: "DongHyun", hobbies: ["Foot Ball", "Soccer"] },
-  { age: 28 }
-);
-console.log(mergedObject, mergedObject2);
+const mergedObject = mergeObject({ name: "dongs" }, { age: 28 });
