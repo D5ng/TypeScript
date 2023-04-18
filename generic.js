@@ -13,3 +13,14 @@ function mergeObject(objA, objB) {
     return __assign(__assign({}, objA), objB);
 }
 var mergedObject = mergeObject({ name: "dongs" }, { age: 28 });
+function countAndDescribe(element) {
+    var descriptionText = "Got no value.";
+    if (element.length === 1) {
+        descriptionText = "Got 1 elements";
+    }
+    else if (element.length > 1) {
+        descriptionText = "Got ".concat(element.length, " elements");
+    }
+    return [element, descriptionText];
+}
+console.log(countAndDescribe("Hi there!"));
