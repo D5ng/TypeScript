@@ -72,3 +72,12 @@ var numberStorage = new DataStorage();
 // objStorage.addItem({ name: "DongHyun" });
 // objStorage.removeItem(dongObject);
 // console.log(objStorage.getItems());
+function calc(x, y) {
+    return {
+        message1: x,
+        message2: y,
+    };
+}
+var textMessage = "Hello";
+var resultCalc = calc(textMessage, "World");
+console.log(resultCalc);

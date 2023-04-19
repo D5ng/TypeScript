@@ -69,3 +69,14 @@ const numberStorage = new DataStorage<number>();
 // objStorage.addItem({ name: "DongHyun" });
 // objStorage.removeItem(dongObject);
 // console.log(objStorage.getItems());
+
+function calc<T>(x: string, y: T) {
+  return {
+    message1: x,
+    message2: y,
+  };
+}
+
+const textMessage = "Hello";
+const resultCalc = calc<string>(textMessage, "World");
+console.log(resultCalc);
