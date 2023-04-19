@@ -21,7 +21,7 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
   return [element, descriptionText];
 }
 
-console.log(countAndDescribe("Hi there!"));
+// console.log(countAndDescribe("Hi there!"));
 
 function extractAndConvert<T extends object, U extends keyof T>(
   obj: T,
@@ -30,4 +30,42 @@ function extractAndConvert<T extends object, U extends keyof T>(
   return `Value ${obj[key]}`;
 }
 
-console.log(extractAndConvert({ name: "Dongs" }, "name"));
+// console.log(extractAndConvert({ name: "Dongs" }, "name"));
+
+class DataStorage<T extends string | number | boolean> {
+  private data: T[] = [];
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  removeItem(item: T) {
+    if (this.data.indexOf(item) === -1) return;
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const textStorage = new DataStorage<string>();
+// textStorage.addItem("Dongs");
+// textStorage.addItem("DongHyun");
+// textStorage.addItem("동현씨");
+// textStorage.removeItem("동현씨");
+// console.log(textStorage.getItems());
+
+const numberStorage = new DataStorage<number>();
+// numberStorage.addItem(1);
+// numberStorage.addItem(2);
+// numberStorage.addItem(3);
+// numberStorage.removeItem(3);
+// console.log(numberStorage.getItems());
+
+// const objStorage = new DataStorage<object>();
+// const dongObject = { name: "Dongs" };
+// objStorage.addItem(dongObject);
+// objStorage.addItem({ name: "DongHyun" });
+// objStorage.removeItem(dongObject);
+// console.log(objStorage.getItems());
