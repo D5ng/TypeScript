@@ -35,16 +35,24 @@
 // const person = new Person();
 // console.log(person);
 
-function Log(target: any, propertyName: string | Symbol) {
-  console.log("Property decorator");
-  console.log(target, propertyName);
+// function Log(target: any, propertyName: string | Symbol) {
+//   console.log("Property decorator");
+//   console.log(target, propertyName);
+// }
+
+function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
+  console.log("Access Decorator!");
+  console.log(target);
+  console.log(name);
+  console.log(descriptor);
 }
 
 class Product {
-  @Log
+  // @Log
   title: string;
   private _price: number;
 
+  @Log2
   set price(val: number) {
     if (val > 0) {
       this._price = val;
