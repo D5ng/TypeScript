@@ -1,20 +1,19 @@
-// interface AddFn {
-//   (a: number, b: number): number;
-// }
-var user = {
+"use strict";
+const user = {
     name: "Dongs",
-    say: function () {
-        console.log("my name is ".concat(this.name));
+    say() {
+        console.log(`my name is ${this.name}`);
     },
 };
-var Person = /** @class */ (function () {
-    function Person(name, age) {
-        this.name = name;
-        this.age = age;
+{
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        say() {
+            console.log(`my name is ${this.name}`);
+        }
     }
-    Person.prototype.say = function () {
-        console.log("my name is ".concat(this.name));
-    };
-    return Person;
-}());
-new Person("DongHyun");
+    new Person("DongHyun");
+}

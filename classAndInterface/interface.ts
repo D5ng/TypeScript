@@ -52,18 +52,20 @@ const user: User = {
   },
 };
 
-class Person implements User {
-  name: string;
-  age?: number;
+{
+  class Person implements User {
+    name: string;
+    age?: number;
 
-  constructor(name: string, age?: number) {
-    this.name = name;
-    this.age = age;
+    constructor(name: string, age?: number) {
+      this.name = name;
+      this.age = age;
+    }
+
+    say(): void {
+      console.log(`my name is ${this.name}`);
+    }
   }
 
-  say(): void {
-    console.log(`my name is ${this.name}`);
-  }
+  new Person("DongHyun");
 }
-
-new Person("DongHyun");

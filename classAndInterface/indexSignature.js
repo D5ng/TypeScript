@@ -1,13 +1,13 @@
-// 인덱스 시그니처
-var serverError = {
+"use strict";
+const serverError = {
     statusError: 500,
     messageError: "The connection to the server has been lost",
 };
-var loginError = {
+const loginError = {
     statusError: 400,
     messageError: "400 Bad Request",
 };
-var shoppingList = {
+const shoppingList = {
     iMac: 130,
     mac: 200,
     trackpad: 40,
@@ -15,8 +15,8 @@ var shoppingList = {
     iPad: 130,
 };
 function totalSalary(shoppingList) {
-    var result = 0;
-    for (var item in shoppingList)
+    let result = 0;
+    for (const item in shoppingList)
         result += shoppingList[item];
     return result;
 }

@@ -1,5 +1,6 @@
+"use strict";
 function moveAnimal(animal) {
-    var speed = 0;
+    let speed = 0;
     switch (animal.type) {
         case "bird":
             speed = animal.flyingSpeed;
@@ -8,6 +9,6 @@ function moveAnimal(animal) {
             speed = animal.runningSpeed;
             break;
     }
-    console.log("Moving at Speed ".concat(speed));
+    console.log(`Moving at Speed ${speed}`);
 }
 moveAnimal({ type: "bird", flyingSpeed: 50 });

@@ -1,9 +1,4 @@
-/**
- * ! 리터럴 타입
- * ! 리터럴 타입은 특정 값을 명시해서 사용할 수 있다.
- */
-// let literal: "HelloWorld" = "HelloWorld";
-// literal = "Hello"; // 'HelloWorld' 라는 문자열이 아니면 에러가 난다.
+"use strict";
 function printType(number, oddAndEven) {
     if (oddAndEven === "even" && number % 2 === 0) {
         console.log("짝수가 맞습니다");

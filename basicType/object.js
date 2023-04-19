@@ -1,33 +1,28 @@
-// ! 객체 타입
-// 타입 표기로 작성한 object Type
-var personAnnotation = {
+"use strict";
+const personAnnotation = {
     firstName: 'DongHyun',
     lastName: 'Lee',
     age: 28,
 };
-// 타입 추론
-var personInterface = {
+const personInterface = {
     firstName: 'DongHyun',
     lastName: 'Lee',
     age: 28,
 };
-// ! 배열 타입
-var numberArray = [1, 2, 3, 4, 5];
-var stringArray = ['Lee', "DongHyun", "Front-End"];
-var booleanArray = [true, false, true, true];
-var objectArray = [
+const numberArray = [1, 2, 3, 4, 5];
+const stringArray = ['Lee', "DongHyun", "Front-End"];
+const booleanArray = [true, false, true, true];
+const objectArray = [
     { name: "Lee" },
     { name: "Kim" },
     { name: "Joe" },
 ];
-// ! 객체타입과 배열타입 타입 표기
-var userAnnotation = {
+const userAnnotation = {
     name: 'DongHyun',
     age: 28,
     hobbies: ['Soccer', 'Foot Ball', 'Table Tennis']
 };
-// ! 객체타입과 배열타입 타입 표기
-var userInterface = {
+const userInterface = {
     name: "DongHyun",
     age: 28,
     hobbies: ["Soccer", "Foot Ball", "Table Tennis"],
