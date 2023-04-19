@@ -3,12 +3,14 @@
  * ! 이 기능을 사용하려면 tsconfig.json에서 experimentalDecorators옵션을 true로 설정해 주어야 사용할 수 있다.
  */
 
-function Logger(constructor: Function) {
-  console.log("logging");
-  console.log(constructor);
+function Logger(logString: string) {
+  return function (constructor: Function) {
+    console.log(logString);
+    console.log(constructor);
+  };
 }
 
-@Logger
+@Logger("LOGGIN - PERSON")
 class Person {
   name = "Dongs";
 

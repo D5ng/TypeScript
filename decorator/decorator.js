@@ -41,12 +41,14 @@ var __setFunctionName = (this && this.__setFunctionName) || function (f, name, p
     return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
 };
 var _this = this;
-function Logger(constructor) {
-    console.log("logging");
-    console.log(constructor);
+function Logger(logString) {
+    return function (constructor) {
+        console.log(logString);
+        console.log(constructor);
+    };
 }
 var Person = function () {
-    var _classDecorators = [Logger];
+    var _classDecorators = [Logger("LOGGIN - PERSON")];
     var _classDescriptor;
     var _classExtraInitializers = [];
     var _classThis;
