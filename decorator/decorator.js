@@ -11,6 +11,12 @@ function Log2(target, name, descriptor) {
     console.log(name);
     console.log(descriptor);
 }
+function Log3(target, prop, descriptor) {
+    console.log("Method Decorator");
+    console.log(target);
+    console.log(prop);
+    console.log(descriptor);
+}
 class Product {
     set price(val) {
         if (val > 0) {
@@ -29,5 +35,5 @@ class Product {
     }
 }
 __decorate([
-    Log2
-], Product.prototype, "price", null);
+    Log3
+], Product.prototype, "getPriceWithTax", null);

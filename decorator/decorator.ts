@@ -47,12 +47,19 @@ function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
   console.log(descriptor);
 }
 
+function Log3(target: any, prop: string, descriptor: PropertyDescriptor) {
+  console.log("Method Decorator");
+  console.log(target);
+  console.log(prop);
+  console.log(descriptor);
+}
+
 class Product {
   // @Log
   title: string;
   private _price: number;
 
-  @Log2
+  // @Log2
   set price(val: number) {
     if (val > 0) {
       this._price = val;
@@ -66,6 +73,7 @@ class Product {
     this._price = price;
   }
 
+  @Log3
   getPriceWithTax(tax: number) {
     return this._price * (1 + tax);
   }
