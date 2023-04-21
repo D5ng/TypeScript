@@ -13,14 +13,14 @@ function Logger(logString: string) {
 
 function WithTemplate(template: string, hookId: string) {
   console.log(`Template Factory`);
-  return function <T extends { new (...args: any[]): { name: string } }>(
+  return function <T extends { new (...args: any[]): any }>(
     originalConstructor: T
   ) {
     return class extends originalConstructor {
       constructor(..._: any[]) {
         super();
-        console.log("Template Constructor");
-        const hookEl = document.getElementById(hookId)!;
+        console.log("Rendering Template");
+        const hookEl = document.getElementById(hookId);
         if (hookEl) {
           hookEl.innerHTML = template;
           hookEl.querySelector("h1")!.textContent = this.name;
@@ -38,6 +38,7 @@ class Person {
     console.log("creating person object...");
   }
 }
+
 const person = new Person();
 console.log(person);
 

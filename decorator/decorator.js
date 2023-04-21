@@ -17,7 +17,7 @@ function WithTemplate(template, hookId) {
         return class extends originalConstructor {
             constructor(..._) {
                 super();
-                console.log("Template Constructor");
+                console.log("Rendering Template");
                 const hookEl = document.getElementById(hookId);
                 if (hookEl) {
                     hookEl.innerHTML = template;
